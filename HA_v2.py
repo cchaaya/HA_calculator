@@ -26,10 +26,10 @@ st.sidebar.title("Selector")
         
 app_mode = st.sidebar.selectbox('Select Page',['Overview','Diagnostic Analysis','Prediction']) #three pages
 if app_mode=='Overview':    
-    data=pd.read_csv('C:/Users/OS/Desktop/AUB/MSBA Courses/3- Summer-23/MSBA350E-Health Care Analytics/project/streamlit_project/BrcadatasetFinal2.csv')
+    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_app/main/BrcadatasetFinal2.csv')
 
     # Display an image
-    image = Image.open("C:/Users/OS/Desktop/AUB/MSBA Courses/3- Summer-23/MSBA350E-Health Care Analytics/project/streamlit_project/R.jpeg")
+    image = Image.open("R.jpeg")
 
     # Display image and metrics side by side in the same column
     col1, col2 = st.columns([1, 1])
@@ -116,7 +116,7 @@ if app_mode=='Overview':
 elif app_mode == 'Diagnostic Analysis':
     # Main page2
     st.title("THE RISK FACTORS ASSOCIATED WITH POSITIVE MARGIN IN BREAST CANCER PARTIAL MASTECTOMY")
-    data=pd.read_csv('C:/Users/OS/Desktop/AUB/MSBA Courses/3- Summer-23/MSBA350E-Health Care Analytics/project/streamlit_project/BrcadatasetFinal2.csv') 
+    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_app/main/BrcadatasetFinal2.csv') 
     
     ## Start filter
     st.sidebar.subheader("Filter Data")
@@ -352,7 +352,7 @@ elif app_mode == 'Prediction':
     st.title('CALCULATOR')
     st.subheader("POSITIVE MARGIN PREDICTION IN BREAST CANCER PARTIAL MASTECTOMY")
     # Display an image
-    image2 = Image.open("C:\\Users\\OS\\Desktop\\AUB\\MSBA Courses\\3- Summer-23\\MSBA350E-Health Care Analytics\\project\\streamlit_project\\medicalrec.PNG")    
+    image2 = Image.open("medicalrec.PNG")    
     st.image(image2, use_column_width=False)   
     st.write('Sir/Mme , YOU need to fill all necessary informations in order    to get a reply to your request !')    
     st.sidebar.header("Information about the Patient :")    
@@ -443,19 +443,19 @@ elif app_mode == 'Prediction':
     ]
 
     single_sample = np.array(feature_list).reshape(1, -1)
-
+  
     if st.button("Predict"):
-        file_ = open("C:\\Users\\OS\\Desktop\\AUB\\MSBA Courses\\3- Summer-23\\MSBA350E-Health Care Analytics\\project\\streamlit_project\\simulator.PNG", "rb")
+        file_ = open("simulator.PNG", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
         
-        file = open("C:/Users/OS/Desktop/AUB/MSBA Courses/3- Summer-23/MSBA350E-Health Care Analytics/project/streamlit_project/highrisk.PNG", "rb")
+        file = open("highrisk.PNG", "rb")
         contents = file.read()
         data_url_no = base64.b64encode(contents).decode("utf-8")
         file.close()
         
-        loaded_model = pickle.load(open('C:/Users/OS/Desktop/AUB/MSBA Courses/3- Summer-23/MSBA350E-Health Care Analytics/project/streamlit_project/logreg_model.sav', 'rb'))
+        loaded_model = pickle.load(open('logreg_model.sav', 'rb'))
         prediction = loaded_model.predict(single_sample)
         
         if prediction[0] == 1:
@@ -468,4 +468,3 @@ elif app_mode == 'Prediction':
 
 # footer = 'Prepared By "My_name"'
 # st.markdown(f'<div style="position: fixed; bottom: 0;">{footer}</div>', unsafe_allow_html=True)
-
