@@ -350,7 +350,7 @@ elif app_mode == 'Diagnostic Analysis':
 
 elif app_mode == 'Prediction':
     st.title('CALCULATOR')
-    st.subheader("POSITIVE MARGIN PREDICTION IN BREAST CANCER PARTIAL MASTECTOMY")
+    st.subheader("MARGIN PREDICTION CALCULATOR FOR BREAST CANCER PARTIAL MASTECTOMY")
     # Display an image
     image2 = Image.open("medicalrec.PNG")    
     st.image(image2, use_column_width=False)   
