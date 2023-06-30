@@ -1,2 +1,3 @@
 # HA_calculator
-Health Analytics app with calculator for positive margins
+Health Analytics application with a calculator for positive margins
+link to the app 
