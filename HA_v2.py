@@ -26,7 +26,7 @@ st.sidebar.title("Selector")
         
 app_mode = st.sidebar.selectbox('Select Page',['Overview','Diagnostic Analysis','Prediction']) #three pages
 if app_mode=='Overview':    
-    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_app/main/BrcadatasetFinal2.csv')
+    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_calculator/main/BrcadatasetFinal2.csv')
 
     # Display an image
     image = Image.open("R.jpeg")
