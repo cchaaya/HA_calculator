@@ -116,7 +116,7 @@ if app_mode=='Overview':
 elif app_mode == 'Diagnostic Analysis':
     # Main page2
     st.title("THE RISK FACTORS ASSOCIATED WITH POSITIVE MARGIN IN BREAST CANCER PARTIAL MASTECTOMY")
-    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_app/main/BrcadatasetFinal2.csv') 
+    data=pd.read_csv('https://raw.githubusercontent.com/cchaaya/HA_calculator/main/BrcadatasetFinal2.csv') 
     
     ## Start filter
     st.sidebar.subheader("Filter Data")
